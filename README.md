@@ -1,1 +1,74 @@
-# Election-Campaign-Simulation-C-
+# Election Campaign Simulation — C++
+
+A C++ object-oriented simulation that models a national election campaign across multiple divisions.  
+Developed to demonstrate advanced **OOP design**, **inheritance**, **composition**, **polymorphism**, and **data-driven simulation**.
+
+---
+
+## Overview
+The program simulates political parties, leaders, electoral divisions, and daily campaign events.  
+Each simulation produces unique outcomes based on randomised attributes and probabilistic event effects.
+
+---
+
+## Core Components
+- **Stance** – Represents opinions on five national issues using two continuous attributes: significance and measure strength.  
+- **Leader / Party** – Each leader has five issue stances and a bounded popularity score.  
+- **Division** – Represents an electoral region with population and stance profile.  
+- **Event** (abstract) – Base class for daily campaign events; subclasses include:
+  - `PopularityChange`
+  - `PolicyShift`
+  - `PublicOpinionShift`
+  - `PopulationChange`
+- **Campaign** – Coordinates simulation setup, event days, and election results.
+
+---
+
+## ⚙️ Key Concepts Demonstrated
+| Concept | Example |
+|----------|----------|
+| **Encapsulation** | Private attributes with accessor methods |
+| **Inheritance & Polymorphism** | `Event` subclasses override `applyEvent()` |
+| **Composition** | `Party` owns a `Leader`, `Leader` owns `Stance` objects |
+| **Aggregation** | `Campaign` aggregates `Division` and `Party` objects |
+| **Randomness** | Time-seeded random number generation ensures unique runs |
+| **Cosine Similarity** | Measures stance alignment between leaders and divisions |
+
+---
+
+## Election Logic
+
+Score = 0.7 × (Stance–Population Factor) + 0.3 × (Popularity)
+The leader with the highest score wins the division; the party with the most wins forms the government.
+
+---
+
+## Build Instructions
+
+g++ campaign.cpp events.cpp domain.cpp main.cpp -std=c++17 -o APE
+./APE <num_divisions> <num_days>
+
+---
+
+## Sample Output
+Election Results
+Division 1 won by Capitalists (score = 0.671)
+Division 2 won by Capitalists (score = 0.690)
+Division 3 won by Capitalists (score = 0.713)
+Division 4 won by Capitalists (score = 0.824)
+Division 5 won by Greens (score = 1.136)
+
+Liberal Party won 0 divisions.
+Greens won 1 divisions.
+Capitalists won 4 divisions.
+Winner: Capitalists led by Edmund
+
+---
+
+## Concepts Learned
+- Applying OOP principles in large-scale simulations  
+- Managing inter-class relationships and object lifecycles  
+- Implementing randomised events and probability models  
+- Structuring modular multi-file C++ applications
+
+
