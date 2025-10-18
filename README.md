@@ -24,7 +24,7 @@ Each simulation produces unique outcomes based on randomised attributes and prob
 
 ---
 
-## ⚙️ Key Concepts Demonstrated
+## Key Concepts Demonstrated
 | Concept | Example |
 |----------|----------|
 | **Encapsulation** | Private attributes with accessor methods |
@@ -46,7 +46,6 @@ The leader with the highest score wins the division; the party with the most win
 ## Build Instructions
 Clone the repository and compile using `g++` (C++17 or later):
 
-```bash
 git clone https://github.com/<yourusername>/election-campaign-simulation-cpp.git
 cd election-campaign-simulation-cpp
 
