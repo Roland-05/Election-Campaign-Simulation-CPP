@@ -45,7 +45,7 @@ The leader with the highest score wins the division; the party with the most win
 
 ## Build Instructions
 Clone the repository and compile using `g++` (C++17 or later):
-
+```bash
 git clone https://github.com/<yourusername>/election-campaign-simulation-cpp.git
 cd election-campaign-simulation-cpp
 
@@ -66,6 +66,17 @@ Liberal Party won 0 divisions.
 Greens won 1 divisions.
 Capitalists won 4 divisions.
 Winner: Capitalists led by Edmund
+
+---
+
+## File Structure
+election-campaign-simulation-cpp/
+├── campaign.cpp
+├── domain.cpp
+├── events.cpp
+├── main.cpp
+├── README.md
+└── (header files as needed)
 
 ---
 
