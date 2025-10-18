@@ -36,10 +36,48 @@ Each simulation produces unique outcomes based on randomised attributes and prob
 
 ---
 
-## Election Logic
+## Mathematical Model
+
+Each simulation uses randomised continuous values and weighted formulas to model real-world political dynamics.
+x ∈ (0.01, 1.0)
+
+This range ensures natural diversity while avoiding extremes.
+
+### 2. Cosine Similarity
+The alignment between a leader’s and a division’s stance on each issue is calculated as:
+
+cosine(X, Y) = (X₁×Y₁ + X₂×Y₂) / (√(X₁²+X₂²) × √(Y₁²+Y₂²))
+
+
+This yields a value between **0 (opposed)** and **1 (aligned)**.
+
+### 3. Scoring Formula
+A division’s support for a leader is computed using a weighted formula:
 
 Score = 0.7 × (Stance–Population Factor) + 0.3 × (Popularity)
-The leader with the highest score wins the division; the party with the most wins forms the government.
+
+Where:
+- **Stance–Population Factor** = average cosine similarity × division population  
+- **Popularity** adjusts daily via random events bounded in (0.01, 1.0)
+
+The leader with the highest score in each division wins that division.  
+The party with the most division wins forms the government.
+
+### 4. Randomness
+Randomisation is time-seeded (`srand(time(nullptr))`) so every simulation produces unique outcomes, ensuring stochastic behaviour across runs.
+
+---
+
+## Build Instructions
+Clone the repository and compile using `g++` (C++17 or later):
+
+```bash
+git clone https://github.com/<yourusername>/election-campaign-simulation-cpp.git
+cd election-campaign-simulation-cpp
+
+g++ campaign.cpp events.cpp domain.cpp main.cpp -std=c++17 -o program
+./program <num_divisions> <num_days>
+
 
 ---
 
