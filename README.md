@@ -44,9 +44,14 @@ The leader with the highest score wins the division; the party with the most win
 ---
 
 ## Build Instructions
+Clone the repository and compile using `g++` (C++17 or later):
 
-g++ campaign.cpp events.cpp domain.cpp main.cpp -std=c++17 -o APE
-./APE <num_divisions> <num_days>
+```bash
+git clone https://github.com/<yourusername>/election-campaign-simulation-cpp.git
+cd election-campaign-simulation-cpp
+
+g++ campaign.cpp events.cpp domain.cpp main.cpp -std=c++17 -o program
+./program <num_divisions> <num_days>
 
 ---
 
